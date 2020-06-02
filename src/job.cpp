@@ -17,7 +17,7 @@ void* Job::worker(void* user)
 	if (!job) exit(EXIT_FAILURE);
 
 	// Dump JSON to a temporary file.
-	char filename[] = "/tmp/thaicards.XXXXXX";
+	char filename[] = "/tmp/kartuli.XXXXXX";
 	int fd = mkstemp(filename);
 	if (fd == -1) exit(EXIT_FAILURE);
 	fchmod(fd, 0666);
@@ -28,7 +28,7 @@ void* Job::worker(void* user)
 	write(fd, cstr, strlen(cstr));
 	close(fd);
 
-	// Execute thaicards generator.
+	// Execute kartvelebi generator.
 	stringstream ss;
 	ss << "mkdir -p /tmp/";
 	ss << job->timestamp;
@@ -38,7 +38,7 @@ void* Job::worker(void* user)
 	ss << job->timestamp;
 	ss << " && cp ";
 	ss << filename;
-	ss << " . && thaicards ";
+	ss << " . && kartvelebi ";
 	ss << filename;
 	string cmd = ss.str();
 	system(cmd.c_str());
@@ -77,7 +77,7 @@ string Job::getResult()
 	{
 		ss << "<img src=\"/request/";
 		ss << timestamp;
-		ss << "/thaicard_";
+		ss << "/kartuli_";
 		ss << setfill('0') << setw(3) << (i + 1);
 		ss << ".png\" /><br />";
 	}

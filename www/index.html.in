@@ -4,7 +4,7 @@
 	<meta content="text/html; charset=utf-8" http-equiv="content-type">
 	<meta name="description">
 	<meta content="noodp" name="robots">
-	<title>Memory cards rendering system for Thai language learning</title>
+	<title>Memory cards rendering system for Georgian language learning</title>
 	<style>
     body {background-color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 100%;}
     h1 {font-size: 1.5em; color: #404040; text-align: center;}
@@ -128,22 +128,28 @@ a.aciXEb{padding:0 5px;background:rgba(255,255,255,.9);}
 {
     "cards":[
     {
-        "topic":"คำศัพท์ วลี และประโยคต่างๆที่เกี่ยวกับ “รูปลักษณ์”",
-        "russian":"лиц'о",
-        "transcript":"[ลิท-ทโซ]",
-        "thai":"(เพศกลาง) หน้า"
+        "topic":"კარგი მანერები",
+        "georgian":"გამარჯ'ობა",
+        "transcript":"[га-мар-дж'о-ба]",
+        "russian":"здр'авствуйте"
     },
     {
-        "topic":"คำศัพท์ วลี และประโยคต่างๆที่เกี่ยวกับ “รูปลักษณ์”",
-        "russian":"ш'ея",
-        "transcript":"[เช่-ยา]",
-        "thai":"(เพศหญิง) ลำคอ"
+        "topic":"კარგი მანერები",
+        "georgian":"ნახვამდ'ის",
+        "transcript":"[нагх-вам-д'ис]",
+        "russian":"д'о свид'ания"
     },
     {
-        "topic":"คำศัพท์ วลี และประโยคต่างๆที่เกี่ยวกับ “รูปลักษณ์”",
-        "russian":"яз'ык",
-        "transcript":"[ยี-ซืค]",
-        "thai":"(เพศชาย) ลิ้น"
+        "topic":"კარგი მანერები",
+        "georgian":"დ'ილა მშვიდობ'ისა",
+        "transcript":"[д'ила м-шви-до-б'и-са]",
+        "russian":"д'оброе 'утро"
+    },
+    {
+        "topic":"კარგი მანერები",
+        "georgian":"ღ'ამე მშვიდობ'ისა",
+        "transcript":"[гх'а-мэ м-шви-до-б'и-са]",
+        "russian":"спок'ойной н'очи"
     }
     ]
 }</textarea>
@@ -168,12 +174,12 @@ a.aciXEb{padding:0 5px;background:rgba(255,255,255,.9);}
 			<center>
 				<span class="ctr-p" id="body"></span>
 				<div id="lga" style="margin-top:30px;">
-					<img src="logo.png" />
+					<img src="logo.png" width="320px" />
 				</div>
 				<div id="lga" style="margin-top:15px;">
 					<span class="ctr-p" id="body"></span>
 					<div style="font-size:normal;">
-						<span class="ctr-p" id="body"><h1>Memory cards rendering system for Thai language learning</h1></span>
+						<span class="ctr-p" id="body"><h1>Memory cards rendering system for Georgian language learning</h1></span>
 					</div>
 				</div>
 				<div style="height:118px">

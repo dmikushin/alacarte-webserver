@@ -11,12 +11,12 @@ sudo apt install git g++ cmake libmicrohttpd-dev certbot
 Create SSL certificates:
 
 ```
-cd thaicards-webserver
+cd kartuli-webserver
 mkdir ssl
 cd ssl
 sudo certbot certonly -d $(hostname) --standalone --agree-tos -m dmitry@kernelgen.org
-sudo cp /etc/letsencrypt/live/thaicards/privkey.pem id_rsa.thaicards
-sudo cp /etc/letsencrypt/live/thaicards/fullchain.pem id_rsa.thaicards.crt
+sudo cp /etc/letsencrypt/live/kartuli/privkey.pem id_rsa.kartuli
+sudo cp /etc/letsencrypt/live/kartuli/fullchain.pem id_rsa.kartuli.crt
 cd ..
 ```
 
@@ -34,6 +34,6 @@ make -j12
 Deploy the server eiter on an arbitrary non-default port for development, or on port 443 to have SSL support and redirection from HTTP to HTTPS:
 
 ```
-sudo ./thaicards-webserver 443
+sudo ./kartuli-webserver 443
 ```
 

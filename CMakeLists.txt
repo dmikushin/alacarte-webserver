@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(thaicards-webserver)
+project(kartuli-webserver)
 
 set(PROJECT_VERSION_MAJOR 0)
 set(PROJECT_VERSION_MINOR 1)
