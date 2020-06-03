@@ -1,4 +1,4 @@
-Memory cards rendering system for Thai language learning: the webserver.
+Memory cards rendering system for Georgian language learning: the webserver.
 
 ## Prerequisites
 
@@ -15,8 +15,8 @@ cd kartuli-webserver
 mkdir ssl
 cd ssl
 sudo certbot certonly -d $(hostname) --standalone --agree-tos -m dmitry@kernelgen.org
-sudo cp /etc/letsencrypt/live/kartuli/privkey.pem id_rsa.kartuli
-sudo cp /etc/letsencrypt/live/kartuli/fullchain.pem id_rsa.kartuli.crt
+sudo cp /etc/letsencrypt/live/hostname/privkey.pem id_rsa.kartuli
+sudo cp /etc/letsencrypt/live/hostname/fullchain.pem id_rsa.kartuli.crt
 cd ..
 ```
 
@@ -31,9 +31,52 @@ make -j12
 
 ## Deployment
 
-Deploy the server eiter on an arbitrary non-default port for development, or on port 443 to have SSL support and redirection from HTTP to HTTPS:
+* **Development mode**: deploy the server either on an arbitrary non-default port for development, or on port 443 to have SSL support and redirection from HTTP to HTTPS:
 
 ```
 sudo ./kartuli-webserver 443
+```
+
+* **Production mode**: running webserver with "sudo" is generally very insecure; alternatively, install nginx and configure a proxypass to an unprivileged  local port:
+
+```
+sudo apt install nginx
+```
+
+```
+cat /etc/nginx/sites-available/webserver
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name kartuli.mikush.in;
+    access_log off;
+    error_log off;
+    ssl_certificate /etc/letsencrypt/live/hostname/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/hostname/privkey.pem;
+
+    location / {
+      client_max_body_size 0;
+      proxy_pass http://localhost:3001;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header Host $http_host;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_max_temp_file_size 0;
+      proxy_redirect off;
+      proxy_read_timeout 120;
+    }
+}
+
+# Redirect HTTP requests to HTTPS
+server {
+    listen 80;
+    server_name kartuli.mikush.in;
+    return 301 https://$host$request_uri;
+}
+```
+
+```
+sudo systemctl restart nginx
+./kartuli-webserver 3001
 ```
 
