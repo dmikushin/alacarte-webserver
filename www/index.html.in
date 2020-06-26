@@ -128,27 +128,21 @@ a.aciXEb{padding:0 5px;background:rgba(255,255,255,.9);}
 {
     "cards":[
     {
-        "topic":"კარგი მანერები",
-        "georgian":"გამარჯ'ობა",
-        "transcript":"[га-мар-дж'о-ба]",
+        "topic":"la politesse",
+        "french":"bonjo'ur",
+        "transcript":"[бон-ж'ур]",
         "russian":"здр'авствуйте"
     },
     {
-        "topic":"კარგი მანერები",
-        "georgian":"ნახვამდ'ის",
-        "transcript":"[нагх-вам-д'ис]",
+        "topic":"la politesse",
+        "french":"au revo'ir",
+        "transcript":"[а ре-ву-'ар]",
         "russian":"д'о свид'ания"
     },
     {
-        "topic":"კარგი მანერები",
-        "georgian":"დ'ილა მშვიდობ'ისა",
-        "transcript":"[д'ила м-шви-до-б'и-са]",
-        "russian":"д'оброе 'утро"
-    },
-    {
-        "topic":"კარგი მანერები",
-        "georgian":"ღ'ამე მშვიდობ'ისა",
-        "transcript":"[гх'а-мэ м-шви-до-б'и-са]",
+        "topic":"la politesse",
+        "french":"b'onne nu'it",
+        "transcript":"[б'оннь нью'и]",
         "russian":"спок'ойной н'очи"
     }
     ]
@@ -174,7 +168,7 @@ a.aciXEb{padding:0 5px;background:rgba(255,255,255,.9);}
 			<center>
 				<span class="ctr-p" id="body"></span>
 				<div id="lga" style="margin-top:30px;">
-					<img src="logo.png" width="320px" />
+					<img src="logo.png" width="220px" />
 				</div>
 				<div id="lga" style="margin-top:15px;">
 					<span class="ctr-p" id="body"></span>

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(kartuli-webserver)
+project(alacarte-webserver)
 
 set(PROJECT_VERSION_MAJOR 0)
 set(PROJECT_VERSION_MINOR 1)
@@ -66,7 +66,7 @@ add_executable(${PROJECT_NAME} ${SRCS})
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_include_directories(${PROJECT_NAME} PRIVATE ${JSONCPP_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${OUTPUT_DIRECTORY})
-target_compile_definitions(${PROJECT_NAME} PUBLIC BACKEND="kartuli")
+target_compile_definitions(${PROJECT_NAME} PUBLIC BACKEND="alacarte")
 target_compile_definitions(${PROJECT_NAME} PUBLIC GIT_SHA1="${GIT_SHA1}")
 target_link_libraries(${PROJECT_NAME} ${Thread_LIBRARIES} ${MHD_LIBRARIES} ${JSONCPP_LIBRARIES} ${FSLIB})
 

@@ -1,4 +1,4 @@
-Memory cards rendering system for Georgian language learning: the webserver.
+Memory cards rendering system for French language learning: the webserver.
 
 ## Prerequisites
 
@@ -11,12 +11,12 @@ sudo apt install git g++ cmake libmicrohttpd-dev certbot
 Create SSL certificates:
 
 ```
-cd kartuli-webserver
+cd alacarte-webserver
 mkdir ssl
 cd ssl
 sudo certbot certonly -d $(hostname) --standalone --agree-tos -m dmitry@kernelgen.org
-sudo cp /etc/letsencrypt/live/hostname/privkey.pem id_rsa.kartuli
-sudo cp /etc/letsencrypt/live/hostname/fullchain.pem id_rsa.kartuli.crt
+sudo cp /etc/letsencrypt/live/hostname/privkey.pem id_rsa.alacarte
+sudo cp /etc/letsencrypt/live/hostname/fullchain.pem id_rsa.alacarte.crt
 cd ..
 ```
 
@@ -34,7 +34,7 @@ make -j12
 * **Development mode**: deploy the server either on an arbitrary non-default port for development, or on port 443 to have SSL support and redirection from HTTP to HTTPS:
 
 ```
-sudo ./kartuli-webserver 443
+sudo ./alacarte-webserver 443
 ```
 
 * **Production mode**: running webserver with "sudo" is generally very insecure; alternatively, install nginx and configure a proxypass to an unprivileged  local port:
@@ -48,7 +48,7 @@ cat /etc/nginx/sites-available/webserver
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
-    server_name kartuli.mikush.in;
+    server_name alacarte.mikush.in;
     access_log off;
     error_log off;
     ssl_certificate /etc/letsencrypt/live/hostname/fullchain.pem;
@@ -56,7 +56,7 @@ server {
 
     location / {
       client_max_body_size 0;
-      proxy_pass http://localhost:3001;
+      proxy_pass http://localhost:3002;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header Host $http_host;
@@ -70,13 +70,13 @@ server {
 # Redirect HTTP requests to HTTPS
 server {
     listen 80;
-    server_name kartuli.mikush.in;
+    server_name alacarte.mikush.in;
     return 301 https://$host$request_uri;
 }
 ```
 
 ```
 sudo systemctl restart nginx
-./kartuli-webserver 3001
+./alacarte-webserver 3002
 ```
 

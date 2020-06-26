@@ -7,14 +7,14 @@ class SSLKeys
 {
 	static constexpr const unsigned char privateKeyArray[] =
 	{
-		#include "id_rsa.kartuli.h"
+		#include "id_rsa.alacarte.h"
 	};
 	
 	std::string privateKey;
 
 	static constexpr const unsigned char certificateArray[] =
 	{
-		#include "id_rsa.kartuli.crt.h"
+		#include "id_rsa.alacarte.crt.h"
 	};
 	
 	std::string certificate;
